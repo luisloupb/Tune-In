@@ -21,7 +21,7 @@ class User extends Authenticatable
         'email',
         'password',
         'role_id',
-        'city_id',
+        'country_id',
     ];
 
     /**
@@ -33,13 +33,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function city()
+    public function country()
     {
-        return $this->belongsTo(City::class);
+        return $this->belongsTo(Country::class);
     }
 
     public function role()
     {
         return $this->belongsTo(Role::class);
+    }
+
+    public function playList()
+    {
+        return $this->hasMany(PlayList::class);
     }
 }
