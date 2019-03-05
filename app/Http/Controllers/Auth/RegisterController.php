@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -21,6 +22,7 @@ class RegisterController extends Controller
     |
     */
 
+
     use RegistersUsers;
 
     /**
@@ -28,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/userRegister';
 
     /**
      * Create a new controller instance.
@@ -40,6 +42,10 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    /*public function index(){
+        return view('user');
+    }*/
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -50,6 +56,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
@@ -63,10 +70,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        return "hola";
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'last_name' => $data['last_name'],
             'password' => Hash::make($data['password']),
+            'role_id' => $data['role_id'],
+            'country_id' => $data['country_id'],
         ]);
+    }
+    public function register(Request $request){
+        //$this->create($request->all());
+        return view('user');
     }
 }

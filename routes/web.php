@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user');
 });
+
+Route::post('/userRegister','auth\RegisterController@register');
+Route::post('/login','auth\loginController@login');
+
+//Route::post('/user',"registerController");
+
+
+/*Route::get('/add',"usersController@vista");
+Route::post('/add',"usersController@create");
+Route::post('/ingreso',"usersController@validar");*/
