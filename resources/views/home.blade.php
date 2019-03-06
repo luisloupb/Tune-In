@@ -4,13 +4,13 @@
     <title>Tune-In</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    
+
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/ionicons.min.css">
-    
+
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
 		<link rel="stylesheet" href="css/style.css">
-		
+
 		<link rel="icon" type="image/png" href="images/icono.png"/>
   </head>
   <body>
@@ -43,7 +43,7 @@
 	    </div>
 	  </nav>
     <!-- END nav -->
-    
+
     <section class="home-slider owl-carousel">
       <div class="slider-item" style="background-image:url(images/banner.jpg);">
       	<div class="overlay"></div>
@@ -77,7 +77,7 @@
                        <h3>¿Qué servicio ofrece el software Tune-In?</h3>
                         <p>¡Recomendaciones musicales según tus gustos!.</p>
                       </div>
-                    </div>      
+                    </div>
                   </div>
                   <div class="col-md-4 d-flex services align-self-stretch pb-4 px-4 ftco-animate bg-tertiary">
                     <div class="media block-6 d-block text-center">
@@ -85,7 +85,7 @@
                        <h3>¿Cómo lo haremos?</h3>
                         <p>Las canciones que tengas en tu disco local serán usadas como referencia.</p>
                       </div>
-                    </div>    
+                    </div>
                   </div>
                   <div class="col-md-4 d-flex services align-self-stretch pb-4 px-4 ftco-animate bg-fifth">
                     <div class="media block-6 d-block text-center">
@@ -93,12 +93,12 @@
                        <h3>¿Cuál  es su costo?</h3>
                         <p>Sin costo alguno, totalmente gratis. ¡Descárgalo ahora!.</p>
                       </div>
-                    </div>      
+                    </div>
                   </div>
                 </div>
 			</div>
 		</section>
-		
+
 		<section class="ftco-section testimony-section bg-light">
 			<div class="container">
 				<div class="row">
@@ -110,7 +110,7 @@
                                     <div class="item">
                                         <div class="testimony-wrap d-flex">
                                           <div class="user-img mr-4" style="background-image: url(images/staff-1.jpg)">
-                                          </div> 
+                                          </div>
                                           <div class="text ml-2 bg-light">
                                               <span class="quote d-flex align-items-center justify-content-center"></span>
                                               <i class="icon-quote-left"></i>
@@ -123,7 +123,7 @@
                                     <div class="item">
                                         <div class="testimony-wrap d-flex">
                                           <div class="user-img mr-4" style="background-image: url(images/teacher-2.jpg)">
-                                          </div> 
+                                          </div>
                                           <div class="text ml-2 bg-light">
                                               <span class="quote d-flex align-items-center justify-content-center"></span>
                                               <i class="icon-quote-left"></i>
@@ -136,7 +136,7 @@
                                     <div class="item">
                                         <div class="testimony-wrap d-flex">
                                          <div class="user-img mr-4" style="background-image: url(images/persona1.jpeg)">
-                                          </div> 
+                                          </div>
                                           <div class="text ml-2 bg-light">
                                               <span class="quote d-flex align-items-center justify-content-center"></span>
                                               <i class="icon-quote-left"></i>
@@ -294,8 +294,8 @@
         </div>
       </div>
     </footer>
-    
-  
+
+
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
@@ -316,6 +316,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-    
+
   </body>
 </html>
