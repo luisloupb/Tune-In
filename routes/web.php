@@ -1,9 +1,3 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/usuarios', function () {
-    return 'Usuarios';
-});
+Route::get('/', 'HomeController@index');
