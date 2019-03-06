@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('user');
-});
+Route::get('/', 'HomeController@index');
 
 Route::post('/userRegister','auth\RegisterController@register');
 Route::post('/login','auth\loginController@login');
