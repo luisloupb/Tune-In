@@ -13,6 +13,7 @@ use Illuminate\Auth\Events\Registered;
 class RegisterController extends Controller
 {
 
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -20,8 +21,6 @@ class RegisterController extends Controller
             'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-            //'role_id' => ['required', 'string', 'min:6', 'confirmed'],
-            //'country_id' => ['required', 'string', 'min:6', 'confirmed'],
             'role_id' => ['required'],
             'country_id' => ['required'],
 
@@ -30,6 +29,7 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
+        return "hola";
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -40,10 +40,6 @@ class RegisterController extends Controller
         ]);
     }
 
-     /*public function register(Request $request){
-        $this->create($request->all());
-        return view('inicio');
-    }*/
     public function register(Request $request)
     {
         $this->validator($request->all())->validate();
