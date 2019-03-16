@@ -21,8 +21,6 @@ class RegisterController extends Controller
             'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'role_id' => ['required'],
-            'country_id' => ['required'],
 
         ]);
     }
@@ -34,18 +32,14 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'last_name' => $data['last_name'],
             'password' => Hash::make($data['password']),
-            'role_id' => $data['role_id'],
-            'country_id' => $data['country_id'],
+            'role_id' => 1,
         ]);
     }
 
     public function register(Request $request)
     {
         $this->validator($request->all())->validate();
-
         event(new Registered($user = $this->create($request->all())));
-
-
         return redirect('/');
     }
 

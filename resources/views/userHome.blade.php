@@ -14,8 +14,6 @@
 		{!! $errors->first('email','<span>:message</span>')!!}
 		<input type="password" name="password" placeholder="contraseña">
 		<input type="password" name="password_confirmation" placeholder="contraseña confirmar">
-		<input type="text" name="country_id" placeholder="país">
-		<input type="text" name="role_id" placeholder="role">
 		<button type="submit">agrgar</button>
 
 	</form>
