@@ -34,10 +34,21 @@
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a href="index.html" class="nav-link pl-0">Inicio</a></li>
-						<li class="nav-item"><a href="#" class="nav-link">Descarga</a></li>
+				<li class="nav-item active"><a href="index.html" class="nav-link pl-0">Inicio</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">Descarga</a></li>
 	        	<li class="nav-item"><a href="#" class="nav-link">Acerca de nosotros</a></li>
-						<li class="nav-item"><a href="#" class="nav-link">Contáctanos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contáctanos</a></li>
+                @if (Auth::check())
+                {{csrf_field()}}
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <form action="{{route('logout')}}" method="POST">
+                            {{csrf_field()}}
+                            <button type="submit">cerrar</button>
+                        </form>
+                    </a>
+                </li>
+                @endif
 	        </ul>
 	      </div>
 	    </div>
