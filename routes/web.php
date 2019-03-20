@@ -19,7 +19,9 @@ Route::get('/', function () {
 Route::post('userRegister','auth\RegisterController@register');
 Route::post('login','auth\loginController@login')->name('login');
 Route::post('logout','auth\loginController@logout')->name('logout');
-Route::get('home','homeController@index');
+Route::post('PHPTest','testController@NavDir');
+Route::get('home','homeController@index')->name('home');
+
 Route::get('prueba', function () {
     return view('prueba');
 });
