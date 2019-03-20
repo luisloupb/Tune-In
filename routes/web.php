@@ -11,10 +11,12 @@
 |
 */
 
+Route::get('/', 'HomeController@index');
+Route::get('/login', 'HomeController@login');
+
 Route::get('/', function () {
     return view('userHome');
 })->middleware('guest');
-
 
 Route::post('userRegister','auth\RegisterController@register');
 Route::post('login','auth\loginController@login')->name('login');
