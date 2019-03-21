@@ -15,15 +15,17 @@ Route::get('/', 'HomeController@index');
 Route::get('/login', 'HomeController@login');
 
 Route::get('/', function () {
-    return view('userHome');
+    return view('login');
 })->middleware('guest');
 
 Route::post('userRegister','auth\RegisterController@register');
 Route::post('login','auth\loginController@login')->name('login');
-Route::post('logout','auth\loginController@logout')->name('logout');
+Route::get('logout','auth\loginController@logout')->name('logout');
 Route::post('PHPTest','testController@NavDir');
 Route::get('home','homeController@index')->name('home');
-
+Route::get('loginView',function(){
+	return redirect('/');
+});
 Route::get('prueba', function () {
     return view('prueba');
 });

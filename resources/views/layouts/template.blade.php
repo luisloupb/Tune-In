@@ -34,11 +34,18 @@
 	        </button>
 	        <div class="collapse navbar-collapse" id="ftco-nav">
 	            <ul class="navbar-nav ml-auto">
-					    <li class="nav-item active"><a href="index.html" class="nav-link pl-0">Inicio</a></li>
+					    <li class="nav-item active"><a href="{{ route('home') }}" class="nav-link pl-0">Inicio</a></li>
 					    <li class="nav-item"><a href="#" class="nav-link">Descarga</a></li>
 	        	        <li class="nav-item"><a href="#" class="nav-link">Acerca de nosotros</a></li>
 					    <li class="nav-item"><a href="#" class="nav-link">Contáctanos</a></li>
-                        <li class="nav-item"><a href="login.html" class="nav-link">Inicia sesión</a></li>
+                        <li class="nav-item">
+                            @if(Auth::check())
+                              <a href="{{ route('logout') }}" class="nav-link">Cerrar sesión</a>
+                            @else
+                                <a href="{{ url('loginView') }}" class="nav-link">Iniciaa sesión</a>
+                            @endif
+                            
+                        </li>
                 </ul>
 	        </div>
 	    </div>
