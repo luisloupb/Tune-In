@@ -22,5 +22,9 @@
         "sass-loader": "^7.1.0",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.7"
+    },
+    "dependencies": {
+        "audio-metadata": "^0.3.0",
+        "id3js": "^1.1.3"
     }
 }

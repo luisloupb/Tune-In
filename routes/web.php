@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::post('userRegister','auth\RegisterController@register');
 Route::post('login','auth\loginController@login')->name('login');
 Route::get('logout','auth\loginController@logout')->name('logout');
-Route::post('PHPTest','testController@NavDir');
+Route::post('postMetadata','testController@postMetadata')->name('postMetadata');
 Route::get('home','homeController@index')->name('home');
 Route::get('loginView',function(){
 	return redirect('/');

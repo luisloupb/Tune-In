@@ -2,68 +2,48 @@
 <html>
 <head>
 	<title></title>
-<meta name="_token" content="{{csrf_token()}}" />
 </head>
 <body>
-<button onclick="EnviarDatos();">Empezar consulta</button>>
 
-<?php 
+<input type="file" accept="audio/*" multiple/>
 
+<a href="" onClick="enviar();" >enviar</a>
 
-//$getID3 = new getID3;
-
- //ruta actual
-/**while ($archivo = readdir($directorio)) //obtenemos un archivo y luego otro sucesivamente
-{
-    if (is_dir($archivo))//verificamos si es o no un directorio
-    {
-        echo "<a href=''>".$archivo."</a> <br>";
-    }
-    else
-    {
-    	$info = new SplFileInfo($archivo);
-		if ($info->getExtension()=="mp3") {
-			echo $info->getFilename();
-			 $tag = id3_get_tag( "C:/xampp/htdocs/Daddy.mp3");
-			print_r($tag);
-		}
-    }
-}**/
-##$tag = id3_get_tag( "path/to/example.mp3" );
-##print_r($tag);
-
-?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<script language="javascript">
-    function EnviarDatos(){
-    
-      var dir =  "C:/Users/ASUS-PC/Downloads/";
-      var crfs_token = $('meta[name="_token"]').attr('content');
-
-        $.ajax({
-              url: "PHPTest",
-              type: 'post',
-              data: {
-                 dir: dir,
-                 _token: crfs_token
-              },
-          success: function(result){
-                alert('hola');  
+<script src="{{asset('js/id3js/id3.min.js')}}" type="text/javascript"></script>
+<script type="text/javascript">
+      var metadaList = [];
+      var metadaM,temp;
+      var metadata;
+      document.querySelector('input[type="file"]').onchange = function(e) {
+          try {
+            var token = '{{csrf_token()}}';
+            for (var i = 0 ; i < this.files.length; i++) {
+                  id3(this.files[i], function(err, tags) {
+                   var data={title:tags.title,album:tags.album,artist:tags.artist,genre:tags.v1.genre,_token:token};
+                   enviar(data);
+                });
             }
-        });
-    }
+          }
+          catch(err) {
+            
+          }
+      }
 
+    function enviar(data){
     
-    function RecibirDatos(){
+    console.log(data);
+    $.ajax({
+        type: "post",
+        url: "{{route('postMetadata')}}",
+        data: data,
+        success: function (msg) {
+                // alert("Se ha realizado el POST con exito "+msg);
+                // metadaList = [];
+        }
+      });
+      }
 
-          var nombre =  $("#nombre").val();
-
-         $.ajax({
-             url: "https://app.asana.com/-/api/0.1/workspaces/",
-             type: 'GET',
-             dataType: 'json', // added data type
-          });        
-    }
 </script>
 </body> 
 </html>
