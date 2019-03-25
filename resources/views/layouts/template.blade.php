@@ -34,17 +34,16 @@
 	        </button>
 	        <div class="collapse navbar-collapse" id="ftco-nav">
 	            <ul class="navbar-nav ml-auto">
-					    <li class="nav-item active"><a href="{{ route('home') }}" class="nav-link pl-0">Inicio</a></li>
-					    <li class="nav-item"><a href="#" class="nav-link">Descarga</a></li>
-	        	        <li class="nav-item"><a href="#" class="nav-link">Acerca de nosotros</a></li>
-					    <li class="nav-item"><a href="#" class="nav-link">Contáctanos</a></li>
+					    <li class="nav-item"><a href="{{ route('home') }}" class="nav-link pl-0">Inicio</a></li>
+					    <li class="nav-item"><a href="#acercadenosotros" class="nav-link">Acerca de nosotros</a></li>
+				      <li class="nav-item"><a href="#contactanos" class="nav-link">Contáctanos</a></li>
+              <li class="nav-item"><a href="perfil.html" class="nav-link">Perfíl</a></li>
                         <li class="nav-item">
                             @if(Auth::check())
                               <a href="{{ route('logout') }}" class="nav-link">Cerrar sesión</a>
                             @else
-                                <a href="{{ url('loginView') }}" class="nav-link">Iniciaa sesión</a>
-                            @endif
-                            
+                                <a href="{{ url('loginView') }}" class="nav-link">Iniciar sesión</a>
+                            @endif                            
                         </li>
                 </ul>
 	        </div>
@@ -55,7 +54,7 @@
         @yield("content")
     </section>
 
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
+    <footer class="ftco-footer ftco-bg-dark ftco-section" id="contactanos">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-6 col-xl-4">
@@ -120,5 +119,6 @@
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
   <script src="js/index.js"></script>
+  <script src="js/home.js"></script>
   </body>
 </html>
