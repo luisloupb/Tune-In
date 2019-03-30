@@ -120,5 +120,11 @@
   <script src="js/main.js"></script>
   <script src="js/index.js"></script>
   <script src="js/home.js"></script>
+
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="588092467259-ch88k8kbajefc9ttlgplj1e1rudgg6fm.apps.googleusercontent.com">
+  <script src="js/onSignIn.js"></script> 
+  <script src="js/onSignUp.js"></script>
   </body>
 </html>
