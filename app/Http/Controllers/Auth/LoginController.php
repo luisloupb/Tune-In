@@ -25,4 +25,17 @@ class LoginController extends Controller
         return redirect('/');
     }
 
+    public function loginGoogle(){
+         $data = array(
+            'email' => request()->email,
+            'password' => "TuneIN2019TIC2",
+        );
+        if (Auth::attempt($data)) {
+            return redirect('home');
+        }
+        else{
+            return 'error';
+        }
+    }
+
 }

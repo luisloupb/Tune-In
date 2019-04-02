@@ -22,6 +22,8 @@ Route::post('userRegister','auth\RegisterController@register');
 Route::post('login','auth\loginController@login')->name('login');
 Route::get('logout','auth\loginController@logout')->name('logout');
 Route::post('postMetadata','testController@postMetadata')->name('postMetadata');
+Route::post('registerGoogle','auth\RegisterController@registerGoogle')->name('registerGoogle');
+Route::post('loginGoogle','auth\loginController@loginGoogle')->name('loginGoogle');
 Route::get('home','homeController@index')->name('home');
 Route::get('loginView',function(){
 	return redirect('/');

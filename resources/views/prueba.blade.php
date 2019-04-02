@@ -20,7 +20,8 @@
             var token = '{{csrf_token()}}';
             for (var i = 0 ; i < this.files.length; i++) {
                   id3(this.files[i], function(err, tags) {
-                   var data={title:tags.title,album:tags.album,artist:tags.artist,genre:tags.v1.genre,_token:token};
+                    console.log(tags);
+                   var data={title:tags.title,album:tags.album,artist:tags.artist,genre:tags.v2.genre,_token:token};
                    enviar(data);
                 });
             }
@@ -38,7 +39,7 @@
         url: "{{route('postMetadata')}}",
         data: data,
         success: function (msg) {
-                // alert("Se ha realizado el POST con exito "+msg);
+                //alert("Se ha realizado el POST con exito "+msg);
                 // metadaList = [];
         }
       });

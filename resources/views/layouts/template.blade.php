@@ -42,7 +42,7 @@
                             @if(Auth::check())
                               <a href="{{ route('logout') }}" class="nav-link">Cerrar sesión</a>
                             @else
-                                <a href="{{ url('loginView') }}" class="nav-link">Iniciaa sesión</a>
+                                <a href="{{ url('loginView') }}" class="nav-link">Inicia sesión</a>
                             @endif
                             
                         </li>
