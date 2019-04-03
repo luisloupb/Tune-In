@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,3 +32,4 @@ Route::get('prueba', function () {
     return view('prueba');
 });
 
+Route::get('predict','PredictionController@PredictTest')->name('predict');
