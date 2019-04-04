@@ -8,6 +8,7 @@
           <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-8 text-center ftco-animate">
             <h1 class="mb-4">Música Recomendada</h1>
+            <p><a href="#" class="btn btn-secondary px-4 py-3 mt-3">Haz clic para empezar</a></p>
           </div>
         </div>
         </div>
@@ -19,6 +20,7 @@
           <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-8 text-center ftco-animate">
             <h1 class="mb-4">Según tus gustos</h1>
+            <p><a href="#" class="btn btn-secondary px-4 py-3 mt-3">Haz clic para empezar</a></p>
           </div>
         </div>
         </div>
@@ -77,7 +79,7 @@
 									<div class="text">
 										<h3>Axel William Sotelo Grajales</h3>
 										<p>Desarrollador - Diseñador.</p>
-										<a href="mailto:axelsotelo26@hotmail.com">Enviar email</a>
+										<a href="mailto:axelsotelo26@gmail.com">Enviar email</a>
 									</div>
 								</div>
 							</div>
@@ -122,6 +124,7 @@
 				</div>
 			</div>
 		</section>
+    <!--    
     <section class="ftco-section ftco-consult ftco-no-pt ftco-no-pb" style="background-image: url(images/partitura.jpeg);" data-stellar-background-ratio="0.5">
     	<div class="container">
     		<div class="row justify-content-end">
@@ -160,4 +163,5 @@
         </div>
     	</div>
     </section>
+    -->
 @endsection
