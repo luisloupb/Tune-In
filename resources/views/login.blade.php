@@ -38,7 +38,8 @@
             url: "{{ route('loginGoogle')}}",
             data: data,
             success: function(msg){
-                alert(msg);
+                //alert();
+                //location.reload();
             }
         });
 
