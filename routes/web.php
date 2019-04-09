@@ -25,6 +25,7 @@ Route::post('postMetadata','testController@postMetadata')->name('postMetadata');
 Route::post('registerGoogle','auth\RegisterController@registerGoogle')->name('registerGoogle');
 Route::post('loginGoogle','auth\loginController@loginGoogle')->name('loginGoogle');
 Route::get('home','homeController@index')->name('home');
+Route::get('getGenres','testController@getGenres')->name('getGenres');
 Route::get('loginView',function(){
 	return redirect('/');
 });
