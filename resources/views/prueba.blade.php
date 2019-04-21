@@ -16,7 +16,8 @@
       var token = '{{csrf_token()}}';
       var titles = [];
       var artists = [];
-      var genre,genres = [];
+      var genre,genres =[];
+      var generosv1,generosv2 = [];
       /*----------------------------------------------------------------------------*/
       document.querySelector('input[type="file"]').onchange = function(e) {
           try {
@@ -24,7 +25,8 @@
             for (var i = 0 ; i < this.files.length; i++) {
                   id3(this.files[i], function(err, tags) {
                   artists.push(tags.artist);
-                  genres.push(tags.v2.genre);
+                  genres.push(tags.v1.genre);
+                  generosv2.push(tags.v2.genre);
                   titles.push(tags.title);
                 });
             }  
@@ -41,6 +43,7 @@
             titles:titles,
             genres:genres,
             artists : artists,
+            generosv2 : generosv2,
             _token:token
           }
          ,
