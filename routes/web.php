@@ -32,4 +32,5 @@ Route::get('prueba', function () {
     return view('prueba');
 });
 
-Route::get('predict','PredictionController@Predict')->name('predict');
+Route::get('predict','PredictionController@predict')->name('predict');
+Route::get('fitSlope','PredictionController@FitSlopeone')->name('fit');
