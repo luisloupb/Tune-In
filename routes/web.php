@@ -27,6 +27,7 @@ Route::post('postMetadata','testController@postMetadata')->name('postMetadata');
 Route::post('registerGoogle','auth\RegisterController@registerGoogle')->name('registerGoogle');
 Route::post('loginGoogle','auth\loginController@loginGoogle')->name('loginGoogle');
 Route::get('home','homeController@index')->name('home');
+Route::get('getSongs','ratingController@getSongs')->name('getSongs');
 Route::get('getGenres','testController@getGenres')->name('getGenres');
 Route::get('loginView',function(){
 	return redirect('/');
@@ -34,4 +35,6 @@ Route::get('loginView',function(){
 Route::get('download', function () {
     return view('download');
 });
-
+Route::get('rating', function () {
+    return view('rating');
+});
