@@ -16,6 +16,7 @@ class RegisterController extends Controller
 
     protected function validator(array $data)
     {
+        
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
@@ -41,6 +42,25 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
         event(new Registered($user = $this->create($request->all())));
         return redirect('/');
+    }
+
+    function registerGoogle(Request $request){
+        $data = array(
+            'name' => $request->name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => "TuneIN2019TIC2",
+            'password_confirmation' => "TuneIN2019TIC2",
+        );
+        try {
+            $this->validator($data)->validate();
+            event(new Registered($user = $this->create($data)));
+        } catch (Exception $e) {
+            return "error";
+        }
+        
+         return  redirect('/');
+
     }
 
 }

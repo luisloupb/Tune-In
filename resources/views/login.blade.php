@@ -1,6 +1,50 @@
 @extends("layouts.template")
 
 @section("content")
+<script type="text/javascript">
+    function onSingUp(){
+        var name = "gojam";
+        var last_name = "Piccolo";
+        var email = "gojam@gmail.com";
+        // esto no se cambia
+        var token = '{{csrf_token()}}';
+        // hasta aquí
+         var data={
+            name:name,
+            last_name:last_name,
+            email:email,
+            _token:token};
+        $.ajax({
+            type: "post",
+            url: "{{ route('registerGoogle')}}",
+            data: data,
+            success: function(msg){
+                alert("exitoso");
+            }
+        });
+
+    }
+    function onSingIn(){
+        var email = "gojam@gmail.com";
+        // esto no cambia
+        var token = '{{csrf_token()}}';
+        // hasta aquí
+         var data={
+            email:email,
+            _token:token};
+
+        $.ajax({
+            type: "post",
+            url: "{{ route('loginGoogle')}}",
+            data: data,
+            success: function(msg){
+                //alert();
+                //location.reload();
+            }
+        });
+
+    }
+</script>
 <div class="panel">
     <ul class="panel__menu" id="menu">
     <hr/>
@@ -18,6 +62,7 @@
                 <input type="password" name="password" placeholder="contraseña">
             </label>
             <input type="submit"/>
+
             <div class="g-signin2" data-onsuccess="onSignIn()"></div>
                 <!-- {!! $errors->first('email','<span>error</span>')!!}
                 {!! $errors->first('password','<span>error</span>')!!} -->
@@ -27,10 +72,10 @@
             <form method="POST" action="/userRegister" >
                 {{csrf_field()}}
                 <label>Nombre
-                    <input type="text" name="name" placeholder="nombre">
+                    <input type="email" name="name" placeholder="nombre">
                 </label>
                 <label>Apellido
-                    <input type="text" name="last_name" placeholder="apellido">
+                    <input type="email" name="last_name" placeholder="apellido">
                 </label>
                 <label>Email
                     <input type="email" name="email" placeholder="mail">
@@ -43,6 +88,7 @@
                 </label>
                 <input type="submit"/>
                 <div class="g-signin2" data-onsuccess="onSignUp()"></div>
+
                 <!-- {!! $errors->first('email','<span>:message</span>')!!} -->
             </form>
         </div>

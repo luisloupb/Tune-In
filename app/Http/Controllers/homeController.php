@@ -17,4 +17,8 @@ class HomeController extends Controller
     public function profile(){        
         return view('profile');
     }
+
+    public function download(){        
+        return view('download');
+    }
 }
