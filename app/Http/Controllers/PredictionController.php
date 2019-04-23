@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use PHPJuice\Slopeone\Algorithm;
+use App\User;
+use App\Rating;
+use App\Song;
+use App\SongArtist;
 
 class PredictionController extends Controller
 {
@@ -44,5 +48,19 @@ class PredictionController extends Controller
         dd($results);
 
         return $results;
+    }
+
+	public function Predict(Request $request)
+	{
+		$user = User::where('id',27)->get();
+		dd($user);
+		$no = self::getUnqualifiedSongs($user->id);
+	}
+
+    public function getUnqualifiedSongs($id)
+    {
+		$qualifiedSongs = Rating::where('user_id',$id)->get();
+		dd($qualifiedSongs);
+		return $qualifiedSongs;
     }
 }

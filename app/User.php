@@ -33,11 +33,6 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function country()
-    {
-        return $this->belongsTo(Country::class);
-    }
-
     public function role()
     {
         return $this->belongsTo(Role::class);
@@ -46,5 +41,10 @@ class User extends Authenticatable
     public function playList()
     {
         return $this->hasMany(PlayList::class);
+    }
+
+    public function rating()
+    {
+        return $this->belongsTo(Role::class);
     }
 }

@@ -32,4 +32,4 @@ Route::get('prueba', function () {
     return view('prueba');
 });
 
-Route::get('predict','PredictionController@PredictTest')->name('predict');
+Route::get('predict','PredictionController@Predict')->name('predict');

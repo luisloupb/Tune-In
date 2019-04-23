@@ -8,14 +8,8 @@ class Song extends Model
 {
     protected $fillable = [
         'name',
-        'year',
-        'album_id',
+        'year'
     ];
-
-    public function album()
-    {
-    	return $this->belongsTo(Album::class);
-    }
 
     public function songArtist()
     {
@@ -30,5 +24,10 @@ class Song extends Model
     public function songPlayList()
     {
         return $this->hasMany(SongPlayList::class);
+    }
+
+    public function rating()
+    {
+    	return $this->belongsTo(Rating::class);
     }
 }
