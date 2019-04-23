@@ -31,7 +31,7 @@ Route::get('getGenres','testController@getGenres')->name('getGenres');
 Route::get('loginView',function(){
 	return redirect('/');
 });
-Route::get('prueba', function () {
-    return view('prueba');
+Route::get('download', function () {
+    return view('download');
 });
 
