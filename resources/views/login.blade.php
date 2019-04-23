@@ -62,8 +62,8 @@
                 <input type="password" name="password" placeholder="contraseña">
             </label>
             <input type="submit"/>
-                <input type="Button" name="" onclick="onSingIn();" value="log">
 
+            <div class="g-signin2" data-onsuccess="onSignIn()"></div>
                 <!-- {!! $errors->first('email','<span>error</span>')!!}
                 {!! $errors->first('password','<span>error</span>')!!} -->
             </form>
@@ -87,12 +87,19 @@
                     <input type="password" name="password_confirmation" placeholder="contraseña confirmar">
                 </label>
                 <input type="submit"/>
-                <input type="Button" name="" onclick="onSingUp();" value="regi">
+                <div class="g-signin2" data-onsuccess="onSignUp()"></div>
+
                 <!-- {!! $errors->first('email','<span>:message</span>')!!} -->
             </form>
         </div>
     </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>

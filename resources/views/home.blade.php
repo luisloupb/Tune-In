@@ -59,59 +59,11 @@
 		<section class="ftco-section testimony-section bg-light">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-5 order-md-last wrap-about py-5 wrap-about bg-light">
-						<div class="text px-4 ftco-animate">
-	          	            <h2 class="mb-4">Testimonios</h2>
-	          	            <div class="row ftco-animate justify-content-center">
-                                <div class="carousel-testimony owl-carousel">
-                                    <div class="item">
-                                        <div class="testimony-wrap d-flex">
-                                          <div class="user-img mr-4" style="background-image: url(images/staff-1.jpg)">
-                                          </div>
-                                          <div class="text ml-2 bg-light">
-                                              <span class="quote d-flex align-items-center justify-content-center"></span>
-                                              <i class="icon-quote-left"></i>
-                                              <p>"Muy buen software"</p>
-                                              <p class="name">José Manuel Caballero Navarro</p>
-                                              <span class="position">Músico</span>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="testimony-wrap d-flex">
-                                          <div class="user-img mr-4" style="background-image: url(images/teacher-2.jpg)">
-                                          </div>
-                                          <div class="text ml-2 bg-light">
-                                              <span class="quote d-flex align-items-center justify-content-center"></span>
-                                              <i class="icon-quote-left"></i>
-                                              <p>"Tiene unos cuantos bugs pero en general muy bien :)"</p>
-                                              <p class="name">Alma Muñoz Nieto</p>
-                                              <span class="position">Profesora</span>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="testimony-wrap d-flex">
-                                         <div class="user-img mr-4" style="background-image: url(images/persona1.jpeg)">
-                                          </div>
-                                          <div class="text ml-2 bg-light">
-                                              <span class="quote d-flex align-items-center justify-content-center"></span>
-                                              <i class="icon-quote-left"></i>
-                                              <p>"Me funciono perfectamente"</p>
-                                              <p class="name">Javier Alonso Ibañez</p>
-                                              <span class="position">Doctor</span>
-                                          </div>
-                                        </div>
-                                    </div>
-                                </div>
-	          	            </div>
-	          	        </div>
-				    </div>
-					<div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate">
-          	            <h2 class="mb-4">Nuestro equipo de trabajo</h2>
-						<p>El equipo de creación de Tune-In está conformado por: </p>
+					<div class="col-md-12 wrap-about py-5 pr-md-4 ftco-animate">
+          	            <h2 class="mb-12" id="acercadenosotros" style="text-align: center">Nuestro equipo de trabajo</h2>
+						<p style="text-align: center">El equipo de creación de Tune-In está conformado por: </p>
 						<div class="row mt-5">
-							<div class="col-lg-6">
+							<div class="col-lg-4 offset-lg-2">
 								<div class="services-2 d-flex">
 									<div class="text">
 										<h3>Juan Daniel Garcia Lopez</h3>
@@ -120,16 +72,16 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-6">
+							<div class="col-lg-4 offset-lg-1">
 								<div class="services-2 d-flex">
 									<div class="text">
 										<h3>Axel William Sotelo Grajales</h3>
 										<p>Desarrollador - Diseñador.</p>
-										<a href="mailto:axelsotelo26@gmail.com">Enviar email</a>
+										<a href="mailto:axelsotelo26@hotmail.com">Enviar email</a>
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-6">
+							<div class="col-lg-4 offset-lg-2">
 								<div class="services-2 d-flex">
 									<div class="text">
 										<h3>Juan Felipe Franco Zuluaga</h3>
@@ -138,7 +90,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-6">
+							<div class="col-lg-4 offset-lg-1">
 								<div class="services-2 d-flex">
 									<div class="text">
 										<h3>Juan José Brand Londoño</h3>
@@ -147,7 +99,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-6">
+							<div class="col-lg-4 offset-lg-2">
 								<div class="services-2 d-flex">
 									<div class="text">
 										<h3>Cristian Camilo Giraldo Mazo</h3>
@@ -156,10 +108,10 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-6">
+							<div class="col-lg-4 offset-lg-1">
 								<div class="services-2 d-flex">
 									<div class="text">
-										<h3>Luis Felipe Lopez Torres</h3>
+										<h3>Luis Felipe López Torres</h3>
 										<p>Desarrollador.</p>
 										<a href="mailto:luis.lopezt@upb.edu.co">Enviar email</a>
 									</div>

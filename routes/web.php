@@ -13,6 +13,8 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/login', 'HomeController@login');
+Route::get('/profile', 'HomeController@profile');
+Route::get('/download', 'HomeController@download');
 
 Route::get('/', function () {
     return view('login');
