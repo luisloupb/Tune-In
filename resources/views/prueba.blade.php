@@ -6,7 +6,7 @@
 <body>
 
 <input type="file" accept="audio/*" multiple/>
-<input type="Button" value="enviar" name="" onclick="enviar();">
+<input type="Button" value="enviar" id="enviar" name="" onclick="enviar();">
 <input type="Button" value="verdatos" name="" onclick="verdatos();">
 
 
@@ -20,16 +20,21 @@
       var generosv1,generosv2 = [];
       /*----------------------------------------------------------------------------*/
       document.querySelector('input[type="file"]').onchange = function(e) {
+           document.getElementById("enviar").disabled = true;
+
           try {
-            var lon = this.files.length;
-            for (var i = 0 ; i < this.files.length; i++) {
+            if (this.files.length > 3) {
+              for (var i = 0 ; i < this.files.length; i++) {
                   id3(this.files[i], function(err, tags) {
                   artists.push(tags.artist);
                   genres.push(tags.v1.genre);
                   generosv2.push(tags.v2.genre);
                   titles.push(tags.title);
                 });
-            }  
+              }
+              document.getElementById("enviar").disabled = false;
+            } 
+  
           }
           catch(err) {
           }
@@ -48,7 +53,8 @@
           }
          ,
          success: function (msg) {
-                 console.log("los datos se enviaron al servidor correctamente!"+msg);
+                alert(msg);
+                location.reload();
          }
      });
     }

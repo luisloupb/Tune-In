@@ -18,9 +18,7 @@ class testController extends Controller
         $artists = $request->artists;
         $genresV2 = $request->generosv2;
         $validar = $this->compareGenreToDB($genres,$genresV2);
-        $this->insertToBD($validar,$artists,$titles);
-        var_dump($validar);
-        //return view('prueba');
+        return $this->insertToBD($validar,$artists,$titles);
 	}
 	
 	function compareTitleToDB(){
@@ -84,16 +82,19 @@ class testController extends Controller
 
 	function  insertToBD($validar,$artists,$titles){
 		$i = 0;
-
 		foreach ($validar as $item) {
 			if ($item->id != -1) {
 				if ($titles[$i] != null) {
-					DB::table('dbo.music_disc')->insert(['title'=>$titles[$i],'artist'=>$artists[$i],'idGenre'=>$item->id,'idUsers'=>Auth::id()]);
+					try {
+						DB::table('dbo.music_disc')->insert(['title'=>$titles[$i],'artist'=>$artists[$i],'idGenre'=>$item->id,'idUsers'=>Auth::id()]);
+					} catch (Exception $e) {
+						return "Error no se pudo guardar";
+					}
 				}
 			}
 			$i++;
 		}
-		
+		return "La información se guardo exitosamente";
 	}
 
 }
