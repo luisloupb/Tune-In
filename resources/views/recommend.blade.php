@@ -15,36 +15,20 @@
                     </tr>
                     </thead>
                 <tbody>
+                    @php
+                        $flag = 1;
+                    @endphp
+                    @foreach ($predictedSongs as $songInfo)
                     <tr>
-                        <th scope="row">1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <th scope="row">{{$flag}}</th>
+                        <td>{{ $songInfo['Song']->name }}</td>
+                        <td>{{ $songInfo['Artist']->artistic_name == 'no' ? $songInfo['Artist']->name : $songInfo['Artist']->artistic_name}}</td>
+                        <td>{{ $songInfo['Genres'][0]->name }}</td>
+                        @php
+                            $flag += 1;
+                        @endphp
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

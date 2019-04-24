@@ -13,17 +13,17 @@ class Song extends Model
 
     public function songArtist()
     {
-    	return $this->hasMany(SongArtist::class);
+    	return $this->belongsTo(SongArtist::class,'song_id');
     }
 
     public function songGenre()
     {
-    	return $this->hasMany(SongGenre::class);
+    	return $this->belongsTo(SongGenre::class);
     }
 
     public function songPlayList()
     {
-        return $this->hasMany(SongPlayList::class);
+        return $this->belongsTo(SongPlayList::class);
     }
 
     public function rating()

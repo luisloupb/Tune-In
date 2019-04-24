@@ -15,11 +15,11 @@ class SongGenre extends Model
 
     public function song()
     {
-        return $this->belongsTo(Song::class);
+        return $this->hasMany(Song::class);
     }
 
     public function genre()
     {
-        return $this->belongsTo(Genre::class);
+        return $this->hasMany(Genre::class);
     }
 }

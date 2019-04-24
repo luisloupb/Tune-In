@@ -15,11 +15,11 @@ class PlayList extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(User::class);
     }
 
     public function songPlayList()
     {
-        return $this->hasMany(SongPlayList::class);
+        return $this->belongsTo(SongPlayList::class);
     }
 }
