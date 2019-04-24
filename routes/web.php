@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +36,12 @@ Route::get('loginView',function(){
 Route::get('download', function () {
     return view('download');
 });
+
 Route::get('rating', function () {
     return view('rating');
 });
+
+
+Route::get('predict','PredictionController@predict')->name('predict');
+Route::get('fitSlope','PredictionController@FitSlopeone')->name('fit');
+
