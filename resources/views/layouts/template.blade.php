@@ -4,7 +4,8 @@
     <title>Tune-In</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta name="google-signin-client_id" content="588092467259-ch88k8kbajefc9ttlgplj1e1rudgg6fm.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
 
