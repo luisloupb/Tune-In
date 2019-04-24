@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +15,7 @@
 Route::get('/', 'HomeController@index');
 Route::get('/login', 'HomeController@login');
 Route::get('/profile', 'HomeController@profile');
+Route::get('/download', 'HomeController@download');
 
 Route::get('/', function () {
     return view('login');
@@ -22,12 +24,17 @@ Route::get('/', function () {
 Route::post('userRegister','auth\RegisterController@register');
 Route::post('login','auth\loginController@login')->name('login');
 Route::get('logout','auth\loginController@logout')->name('logout');
-Route::post('PHPTest','testController@NavDir');
+Route::post('postMetadata','testController@postMetadata')->name('postMetadata');
+Route::post('registerGoogle','auth\RegisterController@registerGoogle')->name('registerGoogle');
+Route::post('loginGoogle','auth\loginController@loginGoogle')->name('loginGoogle');
 Route::get('home','homeController@index')->name('home');
+Route::get('getGenres','testController@getGenres')->name('getGenres');
 Route::get('loginView',function(){
 	return redirect('/');
 });
-Route::get('prueba', function () {
-    return view('prueba');
+Route::get('download', function () {
+    return view('download');
 });
 
+Route::get('predict','PredictionController@predict')->name('predict');
+Route::get('fitSlope','PredictionController@FitSlopeone')->name('fit');

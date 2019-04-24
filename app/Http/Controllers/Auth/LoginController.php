@@ -9,9 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function login(){
+    
+    public function login()
+    {
        $credentials = $this->validate(request(),['email'=>'email|required|string','password'=>'required|string']);
-
         if (Auth::attempt($credentials)) {
             return redirect('home');
         }
@@ -20,9 +21,23 @@ class LoginController extends Controller
         }
     }
 
-    public function logout(){
+    public function logout()
+    {
         Auth::logout();
         return redirect('/');
+    }
+
+    public function loginGoogle(){
+         $data = array(
+            'email' => request()->email,
+            'password' => "TuneIN2019TIC2",
+        );
+        if (Auth::attempt($data)) {
+            return redirect('home');
+        }
+        else{
+            return 'error';
+        }
     }
 
 }
