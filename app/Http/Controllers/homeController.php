@@ -21,4 +21,8 @@ class HomeController extends Controller
     public function download(){        
         return view('download');
     }
+
+    public function recommend(){        
+        return view('recommend');
+    }
 }

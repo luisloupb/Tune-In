@@ -8,7 +8,7 @@ function onSignUp(googleUser) {
     var character = "abcdefghijkmnpqrtuvwxyzABCDEFGHIJKLMNPQRTUVWXYZ2346789";
     var password = "";
 
-    var passlength = Math.floor(Math.random()*(8-10))+10;
+    var passlength = math.random();
     for (i=0; i<passlength; i++) 
     password += character.charAt(Math.floor(Math.random()*character.length));
 
