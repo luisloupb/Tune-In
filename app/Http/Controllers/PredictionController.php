@@ -9,6 +9,9 @@ use App\User;
 use App\Rating;
 use App\Song;
 use App\SongArtist;
+use App\Artist;
+use App\SongGenre;
+use App\Genre;
 
 class PredictionController extends Controller
 {
@@ -17,7 +20,7 @@ class PredictionController extends Controller
 	{
 		$slopeCache = Cache::get('Model');
 
-		$user=User::where('id',20)->firstOrFail();
+		$user = User::where('id',$request->user_id)->firstOrFail();
 		$userInfo = self::getData($user);
 		$results = $slopeCache->predict($userInfo);
 		$goodValues = [];
@@ -26,7 +29,17 @@ class PredictionController extends Controller
 				array_push($goodValues,$key);
 			}
 		}
-		return $goodValues;
+		
+		$songsInfo = [];
+		foreach ($goodValues as $songId) {
+			array_push($songsInfo,self::getSongInfo($songId));
+		}
+
+		// dd($songsInfo);
+
+		return \view('recommend',[
+			'predictedSongs' => $songsInfo,
+		]);
 	}
 
 	public function FitSlopeone()
@@ -54,5 +67,28 @@ class PredictionController extends Controller
 			}
 		}
 		return $data;
-    }
+	}
+
+	public function getSongInfo($songId)
+	{
+		$song = Song::find($songId);
+
+		$artistId = SongArtist::where('song_id',$songId)->firstOrFail();
+		$artist = Artist::find($artistId->artist_id);
+
+		$songGenres = [];
+		$genres = SongGenre::where('song_id',$songId)->get();
+		foreach ($genres as $genre) {
+			$genreWild = Genre::find($genre->genre_id);
+			array_push($songGenres, $genreWild);
+		}
+
+		return [
+			'Song' => $song,
+			'Artist' => $artist,
+			'Genres' => $songGenres
+		];
+	}
 }
+
+	

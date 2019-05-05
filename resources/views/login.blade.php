@@ -72,10 +72,10 @@
             <form method="POST" action="/userRegister" >
                 {{csrf_field()}}
                 <label>Nombre
-                    <input type="email" name="name" placeholder="nombre">
+                    <input type="text" name="name" placeholder="nombre">
                 </label>
                 <label>Apellido
-                    <input type="email" name="last_name" placeholder="apellido">
+                    <input type="text" name="last_name" placeholder="apellido">
                 </label>
                 <label>Email
                     <input type="email" name="email" placeholder="mail">

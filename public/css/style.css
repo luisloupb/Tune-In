@@ -1389,7 +1389,6 @@ pre {
 
 .table {
   width: 100%;
-  margin-bottom: 1rem;
   background-color: transparent; }
   .table th,
   .table td {
@@ -5441,6 +5440,11 @@ button.bg-light:focus {
 .bg-dark {
   background-color: black !important; }
 
+#cajon-texto{
+    margin: 30px;
+    border-radius: 20px;
+}
+
 a.bg-dark:hover, a.bg-dark:focus,
 button.bg-dark:hover,
 button.bg-dark:focus {
@@ -8633,11 +8637,11 @@ h1, h2, h3, h4, h5,
         border-color: #fff;
         color: #1eaaf1; }
   .btn.btn-secondary {
-    background: #fda638;
-    border: 1px solid #fda638;
+    background: #454545;
+    border: 1px solid #454545;
     color: #fff; }
     .btn.btn-secondary:hover, .btn.btn-secondary:focus, .btn.btn-secondary:active {
-      border: 1px solid #fda638;
+      border: 1px solid #454545;
       color: #fff; }
   .btn.btn-tertiary {
     background: #8cc152;

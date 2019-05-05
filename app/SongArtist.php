@@ -15,11 +15,11 @@ class SongArtist extends Model
 
     public function song()
     {
-    	return $this->belongsTo(Song::class);
+    	return $this->hasMany(Song::class);
     }
 
     public function artist()
     {
-    	return $this->belongsTo(Artist::class);
+    	return $this->hasMany(Artist::class);
     }
 }
