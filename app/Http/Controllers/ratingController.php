@@ -21,8 +21,8 @@ class ratingController extends Controller
     }
 
     function getSongs(){
-    	$data = DB::select("select * from dbo.songs");
-    	return $data;
+        $song = Song::all()->get();
+    	return $song;
     }
 
 }

@@ -4,7 +4,7 @@
     <title>Tune-In</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+     <meta name="csrf-token" content="{{csrf_token()}}"> 
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
 
@@ -26,6 +26,7 @@
 	<link rel="icon" type="image/png" href="images/icono.png"/>
   </head>
   <body>
+    <!-- <input type="button" id="token" style="display: none;" value="'{{csrf_token()}}'" name=""> -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
 	    <div class="container d-flex align-items-center">
 	    	<a class="navbar-brand" href="index.html"><img id="imagen" src="images/logo.jpg"></a>
@@ -48,6 +49,7 @@
                 </ul>
 	        </div>
 	    </div>
+    }
 	</nav>
     <!-- END nav -->
     <section class="ftco-section ftco-consult ftco-no-pt ftco-no-pb" style="background-image: url(images/banner3.jpg);" data-stellar-background-ratio="0.5">
@@ -120,7 +122,8 @@
   <script src="js/main.js"></script>
   <script src="js/index.js"></script>
   <script src="js/home.js"></script>
-
+  <script src="{{asset('js/id3js/id3.min.js')}}" type="text/javascript"></script>
+  <script type="text/javascript" src="js/localResearchAjax.js"></script>
 
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="google-signin-client_id" content="588092467259-ch88k8kbajefc9ttlgplj1e1rudgg6fm.apps.googleusercontent.com">

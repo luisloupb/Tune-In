@@ -24,22 +24,31 @@ Route::get('/', function () {
 Route::post('userRegister','auth\RegisterController@register');
 Route::post('login','auth\loginController@login')->name('login');
 Route::get('logout','auth\loginController@logout')->name('logout');
-Route::post('postMetadata','testController@postMetadata')->name('postMetadata');
+// Route::post('postMetadata','LocalResearchController@postMetadata')->name('postMetadata');
 Route::post('registerGoogle','auth\RegisterController@registerGoogle')->name('registerGoogle');
 Route::post('loginGoogle','auth\loginController@loginGoogle')->name('loginGoogle');
 Route::get('home','homeController@index')->name('home');
 Route::get('getSongs','ratingController@getSongs')->name('getSongs');
-Route::get('getGenres','testController@getGenres')->name('getGenres');
+// Route::get('getGenres','LocalResearchController@getGenres')->name('getGenres');
 Route::get('loginView',function(){
 	return redirect('/');
 });
-Route::get('download', function () {
-    return view('download');
+Route::get('localResearch', function () {
+    return view('localResearch');
 });
 
 Route::get('rating', function () {
     return view('rating');
 });
+
+// Route::get('getGenres','testController@getGenres')->name('getGenres');
+// Route::post('postMetadata','testController@postMetadata')->name('postMetadata');
+// Route::get('prueba', function () {
+//     return view('prueba');
+// });
+
+Route::get('getGenres','LocalResearchController@getGenres')->name('getGenres');
+Route::post('postMetadata','LocalResearchController@postMetadata')->name('postMetadata');
 
 
 Route::get('predict','PredictionController@predict')->name('predict');
