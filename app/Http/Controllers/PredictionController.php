@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use PHPJuice\Slopeone\Algorithm;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\User;
 use App\Rating;
 use App\Song;
@@ -16,11 +18,18 @@ use App\Genre;
 class PredictionController extends Controller
 {
 
-	public function predict(Request $request)
+	function __construct(){
+		$this->middleware('auth');
+	}
+
+	public function getListRecommended()
 	{
+		if (!Cache::has('Model')) {
+			self::FitSlopeone();
+		}
 		$slopeCache = Cache::get('Model');
 
-		$user = User::where('id',$request->user_id)->firstOrFail();
+		$user = User::where('id',Auth::id())->firstOrFail();
 		$userInfo = self::getData($user);
 		$results = $slopeCache->predict($userInfo);
 		$goodValues = [];

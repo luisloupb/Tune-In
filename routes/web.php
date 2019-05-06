@@ -34,24 +34,17 @@ Route::get('getSongs','ratingController@getSongs')->name('getSongs');
 Route::get('loginView',function(){
 	return redirect('/');
 });
-Route::get('localResearch', function () {
-    return view('localResearch');
-});
-
+Route::get('localResearch', "LocalResearchController@localResearch");
 Route::get('rating', function () {
     return view('rating');
 });
-
-// Route::get('getGenres','testController@getGenres')->name('getGenres');
-// Route::post('postMetadata','testController@postMetadata')->name('postMetadata');
-// Route::get('prueba', function () {
-//     return view('prueba');
-// });
-
 Route::get('getGenres','LocalResearchController@getGenres')->name('getGenres');
 Route::post('postMetadata','LocalResearchController@postMetadata')->name('postMetadata');
 
 
-Route::get('predict','PredictionController@predict')->name('predict');
+Route::get('getListRecommended','PredictionController@getListRecommended')->name('getListRecommended');
 Route::get('fitSlope','PredictionController@FitSlopeone')->name('fit');
+
+
+Route::get('verUsuarios','testController@verUsuarios')->name('verUsuarios');
 

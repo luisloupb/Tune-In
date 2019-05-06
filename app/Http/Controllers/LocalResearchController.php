@@ -9,16 +9,28 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Song;
+use App\Rating;
+
 
 class LocalResearchController extends Controller
 {
+	function __construct(){
+		$this->middleware('auth');
+	}
+
+	function localResearch() {
+    	return view('localResearch');
+	}
+
     function postMetadata(Request $request) {
         $genres = $request->genres;
         $titles = $request->titles;
         $artists = $request->artists;
         $genresV2 = $request->generosv2;
-        $validar = $this->compareGenreToDB($genres,$genresV2);
-        $this->insertCache($validar,$artists,$titles);
+        $listSong = $this->compareTitleBD($titles);
+        $this->insertToBD($listSong);
+        return redirect('home');
 	}
 
 	function compareGenreToDB($genreLCV1,$genreLCV2){
@@ -80,7 +92,30 @@ class LocalResearchController extends Controller
 		}
 	}
 
-	function  insertToBD($validar,$artists,$titles){
-        var_dump(Cache::get("user".Auth::id()));
+	function compareTitleBD($titles){
+		$lista = [];
+		foreach ($titles as $item) {
+			$song = NULL;
+			$song = Song::where('name',$item)->first();
+			$tempSong;
+			if ($song != NULL) {
+				array_push($lista,[
+					'name' => $song->name,
+					'id' => $song->id
+				]);
+			}
+		}
+		return $lista;
 	}
+
+	function insertToBD($listSong){
+		foreach ($listSong as $item) {
+			Rating::create([
+	        'rating_number'=>mt_rand(5,10) ,
+	        'user_id'=>Auth::id(),
+	        'song_id'=>$item['id'],
+      		]);
+		}
+	}
+
 }

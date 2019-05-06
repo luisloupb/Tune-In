@@ -37,7 +37,7 @@ function enviar(){
       }
      ,
      success: function (msg) {
-            console.log(msg);
+            
             //location.reload();
      }
  });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -12,15 +13,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class testController extends Controller
 {
-    function postMetadata(Request $request) {
-        $genres = $request->genres;
-        $titles = $request->titles;
-        $artists = $request->artists;
-        $genresV2 = $request->generosv2;
-        var_dump($genres);
-       	//$validar = self::compareGenreToDB($genres,$genresV2);
-        //return self::insertToBD($validar,$artists,$titles);
-        //return $validar;
+    function verUsuarios(Request $request) {
+    	var_dump(User::get()->all());
 	}
 	
 	function compareTitleToDB(){

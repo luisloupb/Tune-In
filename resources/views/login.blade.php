@@ -1,50 +1,6 @@
 @extends("layouts.template")
 
 @section("content")
-<script type="text/javascript">
-    function onSingUp(){
-        var name = "gojam";
-        var last_name = "Piccolo";
-        var email = "gojam@gmail.com";
-        // esto no se cambia
-        var token = '{{csrf_token()}}';
-        // hasta aquí
-         var data={
-            name:name,
-            last_name:last_name,
-            email:email,
-            _token:token};
-        $.ajax({
-            type: "post",
-            url: "{{ route('registerGoogle')}}",
-            data: data,
-            success: function(msg){
-                alert("exitoso");
-            }
-        });
-
-    }
-    function onSingIn(){
-        var email = "gojam@gmail.com";
-        // esto no cambia
-        var token = '{{csrf_token()}}';
-        // hasta aquí
-         var data={
-            email:email,
-            _token:token};
-
-        $.ajax({
-            type: "post",
-            url: "{{ route('loginGoogle')}}",
-            data: data,
-            success: function(msg){
-                //alert();
-                //location.reload();
-            }
-        });
-
-    }
-</script>
 <div class="panel">
     <ul class="panel__menu" id="menu">
     <hr/>
