@@ -39,3 +39,6 @@ Route::get('download', function () {
 
 Route::get('predict','PredictionController@predict')->name('predict');
 Route::get('fitSlope','PredictionController@FitSlopeone')->name('fit');
+
+Route::get('auth/{provider}','Auth\RegisterController@redirectToProvider');
+Route::get('auth/{provider}/callback','Auth\RegisterController@handleProviderCallback');
