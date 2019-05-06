@@ -34,7 +34,7 @@ Route::get('getSongs','ratingController@getSongs')->name('getSongs');
 Route::get('loginView',function(){
 	return redirect('/');
 });
-Route::get('localResearch', "LocalResearchController@localResearch");
+Route::get('localResearch', "LocalResearchController@localResearch")->name('localResearch');
 Route::get('rating', function () {
     return view('rating');
 });

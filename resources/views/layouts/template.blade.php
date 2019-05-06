@@ -38,18 +38,27 @@
 	        </button>
 	        <div class="collapse navbar-collapse" id="ftco-nav">
 	            <ul class="navbar-nav ml-auto">
-					    <li class="nav-item"><a href="{{ route('home') }}" class="nav-link pl-0">Inicio</a></li>
-					    <li class="nav-item"><a href="#acercadenosotros" class="nav-link">Acerca de nosotros</a></li>
-				      <li class="nav-item"><a href="#contactanos" class="nav-link">Contáctanos</a></li>
-              <li class="nav-item"><a href="perfil.html" class="nav-link">Perfíl</a></li>
-                        <li class="nav-item">
-                            @if(Auth::check())
-                              <a href="{{ route('logout') }}" class="nav-link">Cerrar sesión</a>
-                            @else
-                                <a href="{{ url('loginView') }}" class="nav-link">Iniciar sesión</a>
-                            @endif                            
-                        </li>
-                </ul>
+  					    <li class="nav-item"><a href="{{ route('home') }}" class="nav-link pl-0">Inicio</a></li>
+  					    <li class="nav-item"><a href="#acercadenosotros" class="nav-link">Acerca de nosotros</a></li>
+  				      <li class="nav-item"><a href="#contactanos" class="nav-link">Contáctanos</a></li>
+                <li class="nav-item"><a href="perfil.html" class="nav-link">Perfíl</a></li>
+                @if(Auth::check())
+                  <li class="nav-item">
+                  <a href="{{ route('getListRecommended') }}" class="nav-link">Lista recomendada</a>
+                  </li>
+                  <li class="nav-item">
+                  <a href="{{ route('localResearch') }}" class="nav-link">Rating</a>
+                  </li>
+                @else
+                @endif                            
+                <li class="nav-item">
+                    @if(Auth::check())
+                      <a href="{{ route('logout') }}" class="nav-link">Cerrar sesión</a>
+                    @else
+                        <a href="{{ url('loginView') }}" class="nav-link">Iniciar sesión</a>
+                    @endif                            
+                </li>
+              </ul>
 	        </div>
 	    </div>
     }

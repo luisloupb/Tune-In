@@ -24,9 +24,6 @@ class PredictionController extends Controller
 
 	public function getListRecommended()
 	{
-		if (!Cache::has('Model')) {
-			self::FitSlopeone();
-		}
 		$slopeCache = Cache::get('Model');
 
 		$user = User::where('id',Auth::id())->firstOrFail();

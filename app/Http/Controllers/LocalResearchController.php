@@ -30,7 +30,7 @@ class LocalResearchController extends Controller
         $genresV2 = $request->generosv2;
         $listSong = $this->compareTitleBD($titles);
         $this->insertToBD($listSong);
-        return redirect('home');
+        return redirect('/');
 	}
 
 	function compareGenreToDB($genreLCV1,$genreLCV2){
