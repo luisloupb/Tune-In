@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class LoginController extends Controller
 {
     
@@ -27,17 +28,6 @@ class LoginController extends Controller
         return redirect('/');
     }
 
-    public function loginGoogle(){
-         $data = array(
-            'email' => request()->email,
-            'password' => "TuneIN2019TIC2",
-        );
-        if (Auth::attempt($data)) {
-            return redirect('home');
-        }
-        else{
-            return 'error';
-        }
-    }
+
 
 }

@@ -48,3 +48,6 @@ Route::get('fitSlope','PredictionController@FitSlopeone')->name('fit');
 
 Route::get('verUsuarios','testController@verUsuarios')->name('verUsuarios');
 
+
+Route::get('auth/{provider}','Auth\RegisterController@redirectToProvider');
+Route::get('auth/{provider}/callback','Auth\RegisterController@handleProviderCallback');

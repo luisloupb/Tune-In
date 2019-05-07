@@ -1,6 +1,7 @@
 @extends("layouts.template")
 
 @section("content")
+
 <div class="panel">
     <ul class="panel__menu" id="menu">
     <hr/>
@@ -18,10 +19,7 @@
                 <input type="password" name="password" placeholder="contraseña">
             </label>
             <input type="submit"/>
-
-            <div class="g-signin2" data-onsuccess="onSignIn()"></div>
-                <!-- {!! $errors->first('email','<span>error</span>')!!}
-                {!! $errors->first('password','<span>error</span>')!!} -->
+            <a href="{{ url('auth/google') }}" class="btn btn-primary">Entrar con Google</a>
             </form>
         </div>
         <div class="panel__box" id="signUpBox">
@@ -43,9 +41,7 @@
                     <input type="password" name="password_confirmation" placeholder="contraseña confirmar">
                 </label>
                 <input type="submit"/>
-                <div class="g-signin2" data-onsuccess="onSignUp()"></div>
-
-                <!-- {!! $errors->first('email','<span>:message</span>')!!} -->
+                <a href="{{ url('auth/google') }}" class="btn btn-primary">Registrate con Google</a>
             </form>
         </div>
     </div>
