@@ -36,16 +36,15 @@ function enviar(){
         _token:token
       }
      ,
-     success: function (msg) {
-            
-            //location.reload();
+     success: function () {
+        window.location="http://localhost:8000";
      }
  });
 }
 
 function verdatos(){
    for (var i = titles.length - 1; i >= 0; i--) {
-         document.getElementById("vista").innerHTML += "<br> titulo: "+titles[i]+" artist: "+artists[i];
+         document.getElementById("vista").innerHTML += "<br> titulo: "+titles[i];
       }
       document.getElementById("BtnVerDatos").disabled = true;
 }

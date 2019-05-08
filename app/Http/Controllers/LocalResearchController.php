@@ -110,11 +110,10 @@ class LocalResearchController extends Controller
 
 	function insertToBD($listSong){
 		foreach ($listSong as $item) {
-			Rating::create([
-	        'rating_number'=>mt_rand(5,10) ,
-	        'user_id'=>Auth::id(),
-	        'song_id'=>$item['id'],
-      		]);
+				Rating::firstOrCreate([
+				'user_id'=>Auth::id(),
+		        'song_id'=>$item['id']],
+		        ['rating_number'=>mt_rand(5,10)]);
 		}
 	}
 
