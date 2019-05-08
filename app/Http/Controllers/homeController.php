@@ -25,4 +25,8 @@ class HomeController extends Controller
     public function recommend(){        
         return view('recommend');
     }
+
+    public function tutorial(){        
+        return view('tutorial');
+    }
 }
