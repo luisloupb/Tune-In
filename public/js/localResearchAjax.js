@@ -37,7 +37,7 @@ function enviar(){
       }
      ,
      success: function () {
-        window.location="http://localhost:8000";
+        window.location="http://localhost:8000/getListRecommended";
      }
  });
 }
