@@ -8,7 +8,7 @@
           <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-8 text-center ftco-animate">
             <h1 class="mb-4">Música Recomendada</h1>
-            <p><a href="#" class="btn btn-secondary px-4 py-3 mt-3">Haz clic para empezar</a></p>
+            <p><a href="{{ route('tutorial') }}" class="btn btn-secondary px-4 py-3 mt-3">Haz clic para empezar</a></p>
           </div>
         </div>
         </div>
@@ -20,7 +20,7 @@
           <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-8 text-center ftco-animate">
             <h1 class="mb-4">Según tus gustos</h1>
-            <p><a href="#" class="btn btn-secondary px-4 py-3 mt-3">Haz clic para empezar</a></p>
+            <p><a href="{{ route('tutorial') }}" class="btn btn-secondary px-4 py-3 mt-3">Haz clic para empezar</a></p>
           </div>
         </div>
         </div>
