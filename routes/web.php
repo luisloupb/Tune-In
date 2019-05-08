@@ -17,7 +17,7 @@ Route::get('/login', 'HomeController@login');
 Route::get('/profile', 'HomeController@profile');
 Route::get('/download', 'HomeController@download');
 Route::get('/recommend', 'HomeController@recommend');
-Route::get('/tutorial', 'HomeController@tutorial');
+Route::get('tutorial', 'HomeController@tutorial')->name('tutorial');
 
 Route::get('/', function () {
     return view('login');
@@ -26,20 +26,29 @@ Route::get('/', function () {
 Route::post('userRegister','auth\RegisterController@register');
 Route::post('login','auth\loginController@login')->name('login');
 Route::get('logout','auth\loginController@logout')->name('logout');
-Route::post('postMetadata','testController@postMetadata')->name('postMetadata');
+// Route::post('postMetadata','LocalResearchController@postMetadata')->name('postMetadata');
 Route::post('registerGoogle','auth\RegisterController@registerGoogle')->name('registerGoogle');
 Route::post('loginGoogle','auth\loginController@loginGoogle')->name('loginGoogle');
 Route::get('home','homeController@index')->name('home');
-Route::get('getGenres','testController@getGenres')->name('getGenres');
+Route::get('getSongs','ratingController@getSongs')->name('getSongs');
+// Route::get('getGenres','LocalResearchController@getGenres')->name('getGenres');
 Route::get('loginView',function(){
 	return redirect('/');
 });
-Route::get('download', function () {
-    return view('download');
+Route::get('localResearch', "LocalResearchController@localResearch")->name('localResearch');
+Route::get('rating', function () {
+    return view('rating');
 });
+Route::get('getGenres','LocalResearchController@getGenres')->name('getGenres');
+Route::post('postMetadata','LocalResearchController@postMetadata')->name('postMetadata');
 
-Route::get('predict','PredictionController@predict')->name('predict');
+
+Route::get('getListRecommended','PredictionController@getListRecommended')->name('getListRecommended');
 Route::get('fitSlope','PredictionController@FitSlopeone')->name('fit');
+
+
+Route::get('verUsuarios','testController@verUsuarios')->name('verUsuarios');
+
 
 Route::get('auth/{provider}','Auth\RegisterController@redirectToProvider');
 Route::get('auth/{provider}/callback','Auth\RegisterController@handleProviderCallback');

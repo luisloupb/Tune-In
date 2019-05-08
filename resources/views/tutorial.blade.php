@@ -56,7 +56,7 @@
             <br>
             <br>
             <div class="text-center">
-                <button type="button" class="btn btn-warning btn-lg">Recomendar Canciones</button>
+                 <a href="{{ route('getListRecommended') }}" class="btn btn-warning btn-lg">ir a recomendaciones</a>
             </div>
         </div>
     </div>

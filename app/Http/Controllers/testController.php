@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -12,49 +13,43 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class testController extends Controller
 {
-    function postMetadata(Request $request) {
-        $genres = $request->genres;
-        $titles = $request->titles;
-        $artists = $request->artists;
-        $genresV2 = $request->generosv2;
-        $validar = $this->compareGenreToDB($genres,$genresV2);
-        return $this->insertToBD($validar,$artists,$titles);
+    function verUsuarios(Request $request) {
+    	var_dump(User::get()->all());
 	}
 	
 	function compareTitleToDB(){
-		$titleDB = $this->getTitles();
+		$titleDB = self::getTitles();
 	}
 
 	function compareGenreToDB($genreLCV1,$genreLCV2){
-		$genresDB = $this->getGenres();
+		$genresDB = self::getGenres();
 		$arrayGenres = array();
-		$i = 0;
-		foreach ($genreLCV1 as $itemV1) {
-			$itemV2 = $genreLCV2[$i];
-			$levOld = 0;
-			$genreNew = "";
-			$percentTemp = 0;
-			foreach ($genresDB as $itemH) {
-
-				similar_text(strtolower($itemV1), strtolower($itemH->name), $percentV1);
-				similar_text(strtolower($itemV2), strtolower($itemH->name), $percentV2);
-				
-				$percent = $percentV1;
-				if ($percentV2 > $percentV1) {
-					$percent = $percentV2;
+		$i = 0;		
+		$temp = 0;
+			foreach ($genreLCV1 as $itemV1) {
+				$itemV2 = $genreLCV2[$i++];
+				$levOld = 0;
+				$genreNew = "";
+				$percentTemp = 0;
+				foreach ($genresDB as $itemH) {				
+					similar_text(strtolower($itemV1), strtolower($itemH->name), $percentV1);
+					similar_text(strtolower($itemV2), strtolower($itemH->name), $percentV2);
+					$percent = $percentV1;					
+					if ($percentV2 > $percentV1) {
+						$percent = $percentV2;
+					}
+					if ($percent > $levOld) {
+						$levOld = $percent;
+						$percentTemp = $percent;
+						$genreNew = $itemH; 
+					}
 				}
-				if ($percent > $levOld) {
-					$levOld = $percent;
-					$percentTemp = $percent;
-					$genreNew = $itemH; 
+				if ($percentTemp < 51) {
+					$genreNew->id = -1;
 				}
-			}
-			if ($percentTemp < 51) {
-				$genreNew->id = -1;
-			}
-			$genreNew->percent = $percentTemp;
-			$arrayGenres[$i++] = $genreNew;
-		}
+				$genreNew->percent = $percentTemp;				
+				array_push($arrayGenres,$genreNew);		
+			}		
 		return $arrayGenres;
 	}
 
@@ -85,11 +80,12 @@ class testController extends Controller
 		foreach ($validar as $item) {
 			if ($item->id != -1) {
 				if ($titles[$i] != null) {
-					try {
+						       	// Rating::create([
+						       	// 	'artist_id' => Artist::where('name',$titles[$i])->get(),
+						       	// 	'rating_num' => rand(6, 10),
+						       	// 	'song_id' => Song::where('name',$titles[$i])->get()
+       							// ]);
 						DB::table('dbo.music_disc')->insert(['title'=>$titles[$i],'artist'=>$artists[$i],'idGenre'=>$item->id,'idUsers'=>Auth::id()]);
-					} catch (Exception $e) {
-						return "Error no se pudo guardar";
-					}
 				}
 			}
 			$i++;
