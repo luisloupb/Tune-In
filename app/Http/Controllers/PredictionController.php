@@ -28,19 +28,22 @@ class PredictionController extends Controller
 
 		$user = User::where('id',Auth::id())->firstOrFail();
 		$userInfo = self::getData($user);
-		$results = $slopeCache->predict($userInfo);
-		$goodValues = [];
-		foreach ($results as $key => $value) {
-			if ($value>7) {
-				array_push($goodValues,$key);
+		if (!empty($userInfo)) {
+			$results = $slopeCache->predict($userInfo);
+			$goodValues = [];
+			foreach ($results as $key => $value) {
+				if ($value>7) {
+					array_push($goodValues,$key);
+				}
+			}
+			
+			$songsInfo = [];
+			foreach ($goodValues as $songId) {
+				array_push($songsInfo,self::getSongInfo($songId));
 			}
 		}
 		
 		$songsInfo = [];
-		foreach ($goodValues as $songId) {
-			array_push($songsInfo,self::getSongInfo($songId));
-		}
-
 		// dd($songsInfo);
 
 		return \view('recommend',[
