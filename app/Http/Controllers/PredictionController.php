@@ -41,9 +41,10 @@ class PredictionController extends Controller
 			foreach ($goodValues as $songId) {
 				array_push($songsInfo,self::getSongInfo($songId));
 			}
+		}else {
+			$songsInfo = [];
 		}
 		
-		$songsInfo = [];
 		// dd($songsInfo);
 
 		return \view('recommend',[
