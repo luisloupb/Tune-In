@@ -32,7 +32,7 @@
     <!-- <input type="button" id="token" style="display: none;" value="'{{csrf_token()}}'" name=""> -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
 	    <div class="container d-flex align-items-center">
-	    	<a class="navbar-brand" href="index.html"><img id="imagen" src="images/logo.jpg"></a>
+	    	<a class="navbar-brand" href="{{ route('home') }}"><img id="imagen" src="images/logo.jpg"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	        </button>
@@ -41,7 +41,7 @@
   					    <li class="nav-item"><a href="{{ route('home') }}" class="nav-link pl-0">Inicio</a></li>
   					    <li class="nav-item"><a href="#acercadenosotros" class="nav-link">Acerca de nosotros</a></li>
   				      <li class="nav-item"><a href="#contactanos" class="nav-link">Contáctanos</a></li>
-                <li class="nav-item"><a href="perfil.html" class="nav-link">Perfíl</a></li>
+                <!-- <li class="nav-item"><a href="perfil.html" class="nav-link">Perfíl</a></li> -->
                 @if(Auth::check())
                   <li class="nav-item">
                   <a href="{{ route('getListRecommended') }}" class="nav-link">Lista recomendada</a>
