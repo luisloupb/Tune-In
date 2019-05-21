@@ -37,7 +37,8 @@ function enviar(){
       }
      ,
      success: function () {
-        window.location="https://smartunin.azurewebsites.net/getListRecommended";
+        window.location="http://localhost:8000/getListRecommended";
+        // window.location="https://smartunin.azurewebsites.net/getListRecommended";
      }
  });
 }
