@@ -13,35 +13,36 @@
             <form action="{{route('login')}}" method="POST">
             {{csrf_field()}}
             <label>Email
-                <input type="email" name="email" placeholder="email">
+                <input type="email" name="email" placeholder="email" required>
             </label>
             <label>Contraseña
-                <input type="password" name="password" placeholder="contraseña">
+                <input type="password" name="password" placeholder="contraseña" required>
             </label>
             <input type="submit"/>
             <a href="{{ url('auth/google') }}" class="btn btn-primary">Entrar con Google</a>
             </form>
         </div>
         <div class="panel__box" id="signUpBox">
-            <form method="POST" action="/userRegister" >
+            <form method="POST" action="/userRegister" name="r">
                 {{csrf_field()}}
                 <label>Nombre
-                    <input type="text" name="name" placeholder="nombre">
+                    <input type="text" name="name" placeholder="nombre" required>
                 </label>
                 <label>Apellido
-                    <input type="text" name="last_name" placeholder="apellido">
+                    <input type="text" name="last_name" placeholder="apellido" required>
                 </label>
                 <label>Email
-                    <input type="email" name="email" placeholder="mail">
+                    <input type="email" name="email" placeholder="mail" required>
                 </label>
                 <label>Contraseña
-                    <input type="password" name="password" placeholder="contraseña">
+                    <input type="password" name="password" placeholder="contraseña" required>
                 </label>
                 <label>Confirme la contraseña
-                    <input type="password" name="password_confirmation" placeholder="contraseña confirmar">
+                    <input type="password" name="password_confirmation" placeholder="contraseña confirmar" required>
                 </label>
-                <input type="submit"/>
-                <a href="{{ url('auth/google') }}" class="btn btn-primary">Registrate con Google</a>
+                <input type="button" value="Enviar" style="cursor: pointer; background: #010a0f; border: 1px solid #010a0f; color: #fff; border-radius: 40px" onclick="comprobarClave()"/>
+                <input name="enviar" id="enviar" type="submit" hidden/>
+                <a href="{{ url('auth/google') }}" class="btn btn-primary">Con Google</a>
             </form>
         </div>
     </div>
@@ -69,4 +70,15 @@
 <br>
 <br>
 <br>
+<script>
+    function comprobarClave(){
+        clave1 = document.r.password.value
+        clave2 = document.r.password_confirmation.value
+    
+        if (clave1 != clave2)
+           alert("Las dos claves son distintas")
+        else
+            document.getElementById("enviar").click();
+        }
+</script> 
 @endsection
