@@ -19,7 +19,7 @@
                 <input type="password" name="password" placeholder="contraseña" required>
             </label>
             <input type="submit"/>
-            <a href="{{ url('auth/google') }}" class="btn btn-primary">Entrar con Google</a>
+            {{-- <a href="{{ url('auth/google') }}" class="btn btn-primary">Entrar con Google</a> --}}
             </form>
         </div>
         <div class="panel__box" id="signUpBox">
@@ -42,7 +42,7 @@
                 </label>
                 <input type="button" value="Enviar" style="cursor: pointer; background: #010a0f; border: 1px solid #010a0f; color: #fff; border-radius: 40px" onclick="comprobarClave()"/>
                 <input name="enviar" id="enviar" type="submit" hidden/>
-                <a href="{{ url('auth/google') }}" class="btn btn-primary">Con Google</a>
+                {{-- <a href="{{ url('auth/google') }}" class="btn btn-primary">Con Google</a> --}}
             </form>
         </div>
     </div>
